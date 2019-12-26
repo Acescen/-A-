@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>学生信息列表</title>
+</head>
+<body>
+
+<div style="padding-left: 40%">
+
+    <form action="/addstu">
+        <button type="submit">添加学生</button>
+    </form>
+    <br>
+    <br>
+
+    <table border="1">
+        <tr>
+            <th>学生姓名</th>
+            <th>学号</th>
+            <th>年龄：index</th>
+        </tr>
+        <tr  th:each="stu : ${students}" >
+            <td th:text="${stu.stuName}"></td>
+            <td th:text="${stu.stuNumber}"></td>
+            <th th:text="${stu.age}"></th>
+        </tr>
+    </table>
+
+</div>
+</body>
+</html>
