@@ -1,24 +1,20 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt" %>
 <%@ page language="java" import="java.util.*" contentType="text/html; charset=utf-8" %>
 <%@ page import="javabean.User" %>
 <%@ page import="javabean.Record" %>
+<%@ page import="javabean.UserOpt" %>
 <html>
 <title>添加用户</title>
 <body>
-<form action="/addUser" method="post">
-    账号：<input type="text" name="username">
-    姓名：<input type="text" name="name">
-    密码：<input type="password" name="password">
-    <button type="submit">添加</button>
-</form>
-<div style="color: red">
-    <%=session.getAttribute("msg") == null ? "" : session.getAttribute("msg")%>
-</div>
+<%
+    UserOpt userOpt = new UserOpt();
+    userOpt.addUser();
+%>
+<button type="button" value="name" onclick="javascript:location.reload()">添加用户</button>
+
 
 <%
-    //List<User> users = (List<User>) request.getAttribute("users");
-    List<User> users = (List<User>) request.getSession().getAttribute("users");
+    List<User> users = userOpt.getUsers();
     if (users != null) {
 %>
 所有用户信息：<br>
@@ -59,7 +55,7 @@
 
 
 <%
-    List<Record> records = (List<Record>) request.getSession().getAttribute("records");
+    List<Record> records = userOpt.getRecords();
     if (records != null) {
 %>
 添加记录信息：<br>
@@ -95,4 +91,5 @@
     }
 %>
 </body>
+
 </html>

@@ -20,7 +20,6 @@ public class Caigouyuan {
 
 
     public Qiezi getQiezi() {
-        System.out.println(kucun.getQieziNum());
         if (kucun.getQieziNum() > 0) {
             kucun.subtractQiezi();
             return new Qiezi();
