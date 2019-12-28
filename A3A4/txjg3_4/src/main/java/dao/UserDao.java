@@ -37,20 +37,6 @@ public class UserDao {
         }
     }
 
-
-    public int getQieziNum() {
-        try {
-            rs = stmt.executeQuery("SELECT num FROM txjg1 t where t.name='qiezi'");
-            //如果有数据，rs.next()返回true
-            while (rs.next()) {
-                return rs.getInt("num");
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return -1;
-    }
-
     public boolean add(User user) {
         try {
             int flag1 = stmt.executeUpdate("insert into txjg2user(username,name,password) values (" + "\'" + user.getUsername() + "\'" + "," + "\'" + user.getName() + "\'" + "," + "\'" + user.getPassword() + "\'" + ")");

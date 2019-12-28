@@ -1,4 +1,4 @@
-package nuc.products;
+package nuc.jurui;
 
 /**
  * @Author: jurui
@@ -8,10 +8,10 @@ package nuc.products;
  * @Description:
  * @Date: Created in 12:16 2019-12-26
  */
-public class ZhuYeQing extends nuc.products.Product {
+public class ZhuYeQing extends Product {
 
     @Override
-    public void heSuanChanPin() {
+    public void heSuan() {
         System.out.println("核算产品：竹叶青");
 
     }

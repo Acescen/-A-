@@ -20,6 +20,7 @@ public class UserOpt {
     private List<Record> records;
     private static UserDao userDao;
     private static String msg;
+    private static int count=0;
 
     static {
         userDao = new UserDao();
@@ -40,17 +41,22 @@ public class UserOpt {
     }
 
     public void addUser() {
-        User user = new User("Test" + new Random().nextInt(90),
-                "用户" + new Random().nextInt(90), "123456");
 
+        if (count > 2) {
+            User user = new User("Test" + new Random().nextInt(90),
+                    "用户" + new Random().nextInt(90), "123456");
 
-        boolean flag = userDao.add(user);
+            boolean flag = userDao.add(user);
 
-        if (flag) {
-            msg = "添加成功！";
-        } else {
-            msg = "添加失败！";
+            if (flag) {
+                msg = "添加成功！";
+            } else {
+                msg = "添加失败！";
+            }
         }
+
+        count++;
+
     }
 
 }

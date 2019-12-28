@@ -1,4 +1,4 @@
-package nuc;
+package nuc.jurui;
 
 /**
  * @Author: jurui
@@ -8,6 +8,6 @@ package nuc;
  * @Description:
  * @Date: Created in 12:11 2019-12-26
  */
-public interface HeSuanZhongXin {
+public interface JingXiaoShang {
    public void heSuan();
 }

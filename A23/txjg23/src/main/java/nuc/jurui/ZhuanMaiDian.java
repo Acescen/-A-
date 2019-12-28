@@ -1,6 +1,4 @@
-package nuc.jingxiaoshang;
-
-import nuc.HeSuanZhongXin;
+package nuc.jurui;
 
 /**
  * @Author: jurui
@@ -10,9 +8,10 @@ import nuc.HeSuanZhongXin;
  * @Description:
  * @Date: Created in 12:22 2019-12-26
  */
-public class ZiYingDian implements HeSuanZhongXin {
+public class ZhuanMaiDian implements JingXiaoShang {
 
     public void heSuan() {
-        System.out.println("核算经销商：自营店");
+        System.out.println("核算经销商：专卖店");
+
     }
 }

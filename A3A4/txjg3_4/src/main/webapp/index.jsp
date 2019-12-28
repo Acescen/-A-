@@ -13,12 +13,12 @@
     <button type="submit">添加</button>
 </form>
 <div style="color: red">
-    <%=session.getAttribute("msg") == null ? "" : session.getAttribute("msg")%>
+    <%=request.getAttribute("msg") == null ? "" : request.getAttribute("msg")%>
 </div>
 
 <%
     //List<User> users = (List<User>) request.getAttribute("users");
-    List<User> users = (List<User>) request.getSession().getAttribute("users");
+    List<User> users = (List<User>) request.getAttribute("users");
     if (users != null) {
 %>
 所有用户信息：<br>
@@ -59,7 +59,7 @@
 
 
 <%
-    List<Record> records = (List<Record>) request.getSession().getAttribute("records");
+    List<Record> records = (List<Record>) request.getAttribute("records");
     if (records != null) {
 %>
 添加记录信息：<br>

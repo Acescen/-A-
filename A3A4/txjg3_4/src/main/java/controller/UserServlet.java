@@ -35,23 +35,23 @@ public class UserServlet extends HttpServlet {
         UserDao userDao = new UserDao();
 
         if (StringUtils.isBlank(username) || StringUtils.isBlank(name) || StringUtils.isBlank(password)) {
-            request.getSession().setAttribute("msg", "请完整输入！");
+            request.setAttribute("msg", "请完整输入！");
         } else {
             User user = new User(username, name, password);
             boolean flag = userDao.add(user);
 
             if (flag) {
-                request.getSession().setAttribute("msg", "添加成功！");
+                request.setAttribute("msg", "添加成功！");
             } else {
-                request.getSession().setAttribute("msg", "添加失败！");
+                request.setAttribute("msg", "添加失败！");
 
             }
         }
 
         List<User> users = userDao.getUserList();
         List<Record> records = userDao.getRecordList();
-        request.getSession().setAttribute("users", users);
-        request.getSession().setAttribute("records", records);
+        request.setAttribute("users", users);
+        request.setAttribute("records", records);
 
         request.getRequestDispatcher("index.jsp").forward(request, response);
     }

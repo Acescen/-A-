@@ -1,6 +1,4 @@
-package nuc.products;
-
-import nuc.HeSuanZhongXin;
+package nuc.jurui;
 
 /**
  * @Author: jurui
@@ -12,7 +10,7 @@ import nuc.HeSuanZhongXin;
  */
 public abstract  class Product {
     //引用核算中心
-    public HeSuanZhongXin jingXiaoShang;
+    public JingXiaoShang jingXiaoShang;
     //核算产品
-    public abstract void heSuanChanPin();
+    public abstract void heSuan();
 }
